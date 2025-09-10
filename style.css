@@ -1,0 +1,97 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0a0a0a; /* Dark tech background */
+  color: #00ffe5;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  padding: 1rem;
+  background-image: url("bg_2.jpg");
+  background-size: cover;
+}
+
+.container {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Headings base style */
+h1, h2 {
+  font-size: clamp(2rem, 6vw, 4rem);  /* auto adjusts size */
+  letter-spacing: 0.2em;
+  margin: 10px 0;
+  text-shadow: 0 0 10px #00ffe5, 0 0 20px #00ffe5, 0 0 40px #00ffe5;
+}
+
+.highlight {
+  font-size: clamp(3rem, 8vw, 5rem);  /* scales with screen */
+  color: #ff007f;
+  text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f;
+}
+
+/* Special X styling */
+.big-x {
+  font-size: clamp(4rem, 12vw, 7rem); /* responsive size */
+  font-weight: 900;
+  color: #00ff88;
+  text-shadow: 0 0 15px #00ff88, 0 0 30px #00ff88, 0 0 60px #00ff88;
+  display: inline-block;
+  transform: scale(1.2);
+  animation: pulse 1.5s infinite alternate;
+}
+
+/* Neon glow animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00ffe5, 0 0 20px #00ffe5, 0 0 40px #00ffe5;
+  }
+  to {
+    text-shadow: 0 0 20px #00ffe5, 0 0 40px #00ffe5, 0 0 80px #00ffe5;
+  }
+}
+
+/* Pulse animation for X */
+@keyframes pulse {
+  from {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
+/* 📱 Small screens */
+@media (max-width: 600px) {
+  h1, h2 {
+    letter-spacing: 0.1em;
+  }
+  .highlight {
+    margin-top: 0.5rem;
+  }
+  .big-x {
+    transform: scale(1.1);
+  }
+}
+
+/* 💻 Large screens */
+@media (min-width: 1200px) {
+  h1, h2 {
+    font-size: 4.5rem;
+  }
+  .highlight {
+    font-size: 6rem;
+  }
+  .big-x {
+    font-size: 8rem;
+  }
+}
